@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sonny Boy Books</title>
+<meta name="description" content="Sonny Boy Books: heartfelt children's books by Australian author Ron Webel: Best Day Ever, Forgiveness Under a Gum Tree and I Wish I Could Fly. Stories about courage, kindness and believing in yourself.">
+<meta property="og:title" content="Sonny Boy Books – Children's books by Ron Webel">
+<meta property="og:description" content="Stories about courage, kindness and believing in yourself.">
+<meta property="og:image" content="https://m.media-amazon.com/images/I/61KPDbzOzyL._SL1000_.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fbf6ec;
+    --bg-alt: #f2ead9;
+    --surface: #ffffff;
+    --ink: #2b2a26;
+    --ink-soft: #5c584e;
+    --gum: #4f6f52;
+    --gum-deep: #3a5340;
+    --sun: #e07a3f;
+    --sun-deep: #c4622a;
+    --sky: #8fb8c9;
+    --line: #e4dccb;
+    --shadow: 0 18px 40px -18px rgba(60, 45, 20, .35);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1c1d1a; --bg-alt: #232520; --surface: #2a2c27;
+      --ink: #f1ece1; --ink-soft: #bdb7a8;
+      --gum: #9cc0a0; --gum-deep: #b7d4ba;
+      --sun: #f0995f; --sun-deep: #f6b183; --sky: #8fb8c9;
+      --line: #3a3c35; --shadow: 0 18px 40px -18px rgba(0,0,0,.7);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1c1d1a; --bg-alt: #232520; --surface: #2a2c27;
+    --ink: #f1ece1; --ink-soft: #bdb7a8;
+    --gum: #9cc0a0; --gum-deep: #b7d4ba;
+    --sun: #f0995f; --sun-deep: #f6b183; --sky: #8fb8c9;
+    --line: #3a3c35; --shadow: 0 18px 40px -18px rgba(0,0,0,.7);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: "Nunito", system-ui, sans-serif; font-size: 18px; line-height: 1.65;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+  h1, h2, h3 { font-family: "Fraunces", Georgia, serif; line-height: 1.15; margin: 0 0 .5em; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+  /* Nav */
+  nav { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 88%, transparent);
+        backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
+  .brand { font-family: "Fraunces", serif; font-weight: 700; font-size: 1.25rem; text-decoration: none; }
+  .brand span { color: var(--sun); }
+  nav ul { list-style: none; display: flex; gap: 24px; margin: 0; padding: 0; font-weight: 600; font-size: .95rem; }
+  nav ul a { text-decoration: none; color: var(--ink-soft); }
+  nav ul a:hover { color: var(--gum); }
+
+  /* Hero */
+  .hero { padding: 72px 0 88px; overflow: hidden; }
+  .hero .wrap { display: grid; grid-template-columns: 1.05fr 1fr; gap: 48px; align-items: center; }
+  .eyebrow { display: inline-block; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
+             font-size: .78rem; color: var(--gum); background: color-mix(in srgb, var(--gum) 14%, transparent);
+             padding: 6px 12px; border-radius: 999px; margin-bottom: 20px; }
+  .hero h1 { font-size: clamp(2.4rem, 5vw, 3.8rem); }
+  .hero h1 em { font-style: normal; color: var(--sun); }
+  .hero p.lead { font-size: 1.2rem; color: var(--ink-soft); max-width: 34ch; }
+  .btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 24px; border-radius: 999px;
+         font-weight: 800; text-decoration: none; transition: transform .15s, background .15s; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-primary { background: var(--sun); color: #fff; }
+  .btn-primary:hover { background: var(--sun-deep); }
+  .btn-ghost { border: 2px solid var(--line); color: var(--ink); }
+  .btn-ghost:hover { border-color: var(--gum); }
+
+  .stack { position: relative; height: 440px; }
+  .stack img { position: absolute; width: 46%; border-radius: 6px; box-shadow: var(--shadow); transition: transform .3s; }
+  .stack img:nth-child(1) { left: 2%;  top: 60px; transform: rotate(-8deg); }
+  .stack img:nth-child(2) { left: 50%; top: 70px; transform: rotate(7deg); }
+  .stack img:nth-child(3) { left: 27%; top: 0;    transform: rotate(-1deg); z-index: 2; }
+  .stack:hover img:nth-child(1) { transform: rotate(-11deg) translateX(-10px); }
+  .stack:hover img:nth-child(2) { transform: rotate(10deg) translateX(10px); }
+  .stack:hover img:nth-child(3) { transform: rotate(0) translateY(-8px); }
+
+  /* Themes strip */
+  .themes { background: var(--gum); color: #fff; padding: 28px 0; }
+  :root[data-theme="dark"] .themes { color: #1c1d1a; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .themes { color: #1c1d1a; } }
+  .themes ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 40px;
+               font-family: "Fraunces", serif; font-size: 1.2rem; }
+  .themes li::before { content: "✦"; margin-right: 10px; opacity: .6; }
+
+  /* Books */
+  section.books { padding: 96px 0 40px; }
+  .section-head { text-align: center; max-width: 640px; margin: 0 auto 64px; }
+  .section-head h2 { font-size: clamp(2rem, 4vw, 2.8rem); }
+  .section-head p { color: var(--ink-soft); }
+
+  .book { display: grid; grid-template-columns: 340px 1fr; gap: 56px; align-items: center;
+          padding: 48px; margin-bottom: 48px; background: var(--surface); border: 1px solid var(--line);
+          border-radius: 24px; }
+  .book:nth-of-type(even) { grid-template-columns: 1fr 340px; }
+  .book:nth-of-type(even) .cover { order: 2; }
+  .cover img { border-radius: 6px; box-shadow: var(--shadow); width: 100%; }
+  .tag { display: inline-block; font-size: .78rem; font-weight: 800; text-transform: uppercase; letter-spacing: .1em;
+         padding: 5px 12px; border-radius: 999px; margin-bottom: 14px; }
+  .tag.new { background: var(--sun); color: #fff; }
+  .tag.soft { background: var(--bg-alt); color: var(--ink-soft); }
+  .book h3 { font-size: clamp(1.8rem, 3vw, 2.4rem); }
+  .byline { color: var(--ink-soft); font-weight: 600; margin: -6px 0 18px; }
+  .book p { margin: 0 0 14px; }
+  .book blockquote { margin: 18px 0; padding: 14px 20px; border-left: 4px solid var(--sun);
+                     background: var(--bg-alt); border-radius: 0 12px 12px 0; font-style: italic; }
+  .facts { display: flex; flex-wrap: wrap; gap: 8px 22px; margin: 22px 0 26px; padding: 0; list-style: none;
+           font-size: .92rem; color: var(--ink-soft); }
+  .facts strong { color: var(--ink); }
+
+  /* About */
+  section.about { padding: 80px 0; background: var(--bg-alt); }
+  .about .wrap { display: grid; grid-template-columns: 1fr 1.4fr; gap: 56px; align-items: center; }
+  .about h2 { font-size: clamp(2rem, 4vw, 2.6rem); }
+  .tree { font-size: 9rem; line-height: 1; text-align: center; filter: saturate(.8); }
+  .quote-big { font-family: "Fraunces", serif; font-size: 1.5rem; line-height: 1.35; color: var(--gum-deep); margin-top: 18px; }
+
+  /* CTA */
+  section.cta { padding: 96px 0; text-align: center; }
+  .cta h2 { font-size: clamp(2rem, 4vw, 2.8rem); }
+  .cta p { color: var(--ink-soft); max-width: 52ch; margin: 0 auto 28px; }
+  .cta .btns { justify-content: center; }
+
+  footer { border-top: 1px solid var(--line); padding: 28px 0; color: var(--ink-soft); font-size: .9rem; text-align: center; }
+
+  @media (max-width: 900px) {
+    .hero .wrap, .about .wrap { grid-template-columns: 1fr; }
+    .stack { height: 360px; max-width: 420px; margin: 0 auto; width: 100%; }
+    .book, .book:nth-of-type(even) { grid-template-columns: 1fr; padding: 28px; gap: 28px; }
+    .book:nth-of-type(even) .cover { order: 0; }
+    .cover { max-width: 280px; margin: 0 auto; }
+    nav ul { display: none; }
+    .tree { font-size: 6rem; }
+  }
+  @media (max-width: 480px) {
+    .wrap { padding: 0 16px; }
+    .hero { padding: 48px 0 64px; }
+    .stack { height: 280px; }
+    .book { padding: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#">Sonny Boy <span>Books</span></a>
+    <ul>
+      <li><a href="#books">Books</a></li>
+      <li><a href="#about">About Ron</a></li>
+      <li><a href="#buy">Buy</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Children's books by Ron Webel</span>
+      <h1>Stories that help every child find their <em>voice</em>.</h1>
+      <p class="lead">Heartfelt, funny picture books about courage, kindness, forgiveness and believing in yourself, drawn from Ron's own childhood growing up with a stutter.</p>
+      <div class="btns">
+        <a class="btn btn-primary" href="#books">Explore the books</a>
+        <a class="btn btn-ghost" href="#about">Meet Ron</a>
+      </div>
+    </div>
+    <div class="stack" aria-hidden="true">
+      <img src="https://m.media-amazon.com/images/I/61-VufN8iWL._SL1360_.jpg" alt="">
+      <img src="https://m.media-amazon.com/images/I/61kzlHPjQkL._SL1500_.jpg" alt="">
+      <img src="https://m.media-amazon.com/images/I/61KPDbzOzyL._SL1000_.jpg" alt="">
+    </div>
+  </div>
+</header>
+
+<div class="themes">
+  <div class="wrap">
+    <ul>
+      <li>Courage</li>
+      <li>Kindness</li>
+      <li>Forgiveness</li>
+      <li>Believing in yourself</li>
+    </ul>
+  </div>
+</div>
+
+<section class="books" id="books">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>The Books</h2>
+      <p>Three stories for young readers and the grown-ups who read with them.</p>
+    </div>
+
+    <article class="book">
+      <div class="cover">
+        <img src="https://m.media-amazon.com/images/I/61KPDbzOzyL._SL1000_.jpg" alt="Cover of I Wish I Could Fly by Ronald Webel, illustrated by Justine Martin" loading="lazy">
+      </div>
+      <div>
+        <span class="tag new">New release</span>
+        <h3>I Wish I Could Fly</h3>
+        <p class="byline">Ronald Webel · Illustrated by Justine Martin</p>
+        <p><strong>Redgie wants more than anything to fly.</strong> There's just one problem: no matter how hard he tries, he can't seem to get off the ground!</p>
+        <p>While the other birds soar through the sky, Redgie keeps trying, learning and asking for help. There are wobbles, crashes and plenty of bananas along the way, but Redgie is determined not to give up.</p>
+        <p>A heartwarming and funny story about believing in yourself, accepting that we all learn differently, and discovering that the things that seem impossible sometimes just take a little more courage, help and determination.</p>
+        <ul class="facts">
+          <li><strong>Ages</strong> 3–8</li>
+          <li><strong>Pages</strong> 32</li>
+          <li><strong>Format</strong> Paperback</li>
+          <li><strong>Publisher</strong> Morpheus Publishing</li>
+        </ul>
+        <a class="btn btn-primary" href="https://www.amazon.com.au/dp/1923650742" target="_blank" rel="noopener">Buy on Amazon →</a>
+      </div>
+    </article>
+
+    <article class="book">
+      <div class="cover">
+        <img src="https://m.media-amazon.com/images/I/61kzlHPjQkL._SL1500_.jpg" alt="Cover of Forgiveness Under a Gum Tree by Ron Webel" loading="lazy">
+      </div>
+      <div>
+        <span class="tag soft">Written &amp; illustrated by Ron</span>
+        <h3>Forgiveness Under a Gum Tree</h3>
+        <p class="byline">Ron Webel</p>
+        <p>Growing up in a small town with a stutter, Ron found it hard to make close friends. But he had four, and most afternoons they'd sit together in a field under a gum tree, talking about everything and nothing.</p>
+        <p>Then one day Ron overheard those friends making fun of the way he spoke. His heart sank and he wanted to run and hide, until he remembered something his dad used to say:</p>
+        <blockquote>"Holding onto hurt is like holding onto an ember. It hurts you, but not the other person."</blockquote>
+        <p>A gentle, true-to-life story about hurt, healing and the freedom that comes with forgiveness.</p>
+        <ul class="facts">
+          <li><strong>Pages</strong> 29</li>
+          <li><strong>Formats</strong> Paperback &amp; Kindle</li>
+          <li><strong>Published</strong> October 2025</li>
+        </ul>
+        <a class="btn btn-primary" href="https://www.amazon.com.au/dp/B0FXVPGW4F" target="_blank" rel="noopener">Buy on Amazon →</a>
+      </div>
+    </article>
+
+    <article class="book">
+      <div class="cover">
+        <img src="https://m.media-amazon.com/images/I/61-VufN8iWL._SL1360_.jpg" alt="Cover of Best Day Ever by Ronald Webel" loading="lazy">
+      </div>
+      <div>
+        <span class="tag soft">Ron's first book</span>
+        <h3>Best Day Ever</h3>
+        <p class="byline">Ronald Webel</p>
+        <p>Step into the shoes of young Ron Webel, a boy with a stutter and a heart full of doubts. School is tough enough, but going on his <em>birthday</em>? Certain no one will celebrate him, Ron braces for a day he hopes will pass quickly.</p>
+        <p>But life has surprises in store. Through unexpected challenges and heartwarming moments, Ron discovers that sometimes the world sees us in ways we don't see ourselves.</p>
+        <p>Full of humour, courage and tender lessons, <strong>Best Day Ever</strong> is a reminder that every voice deserves to be heard, and every birthday deserves a little kindness.</p>
+        <ul class="facts">
+          <li><strong>Ages</strong> 4–12</li>
+          <li><strong>Pages</strong> 60</li>
+          <li><strong>Format</strong> Paperback</li>
+          <li><strong>Publisher</strong> Ark House Kids</li>
+        </ul>
+        <a class="btn btn-primary" href="https://www.amazon.com.au/dp/1763772071" target="_blank" rel="noopener">Buy on Amazon →</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="tree" aria-hidden="true">🌳</div>
+    <div>
+      <span class="eyebrow">About the author</span>
+      <h2>Meet Ron Webel</h2>
+      <p>Ron grew up in a small Australian town with a stutter. School wasn't always easy and friendships could be hard to find, but those years taught him about courage, kindness and the power of letting go of hurt.</p>
+      <p>Today Ron turns those experiences into warm, funny stories for children, so that every young reader who has ever felt different knows their voice matters.</p>
+      <p class="quote-big">"Every voice deserves to be heard."</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="buy">
+  <div class="wrap">
+    <h2>Bring Ron's stories home</h2>
+    <p>Perfect for bedtime, the classroom, or any child who needs a reminder that they're braver than they think.</p>
+    <div class="btns">
+      <a class="btn btn-primary" href="https://www.amazon.com.au/dp/1923650742" target="_blank" rel="noopener">I Wish I Could Fly</a>
+      <a class="btn btn-primary" href="https://www.amazon.com.au/dp/B0FXVPGW4F" target="_blank" rel="noopener">Forgiveness Under a Gum Tree</a>
+      <a class="btn btn-primary" href="https://www.amazon.com.au/dp/1763772071" target="_blank" rel="noopener">Best Day Ever</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© <span id="yr">2026</span> Sonny Boy Books · Children's books by Ron Webel · Available on Amazon Australia</div>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
